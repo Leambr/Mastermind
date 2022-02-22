@@ -1,0 +1,120 @@
+body {
+    background: #E0E0E0;
+    margin-top: 50px;
+}
+
+/* Page display */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Console display */
+.console-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div .console {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 400px;
+    height: 700px;
+    background: #1F1F1F;
+    border-radius: 30px;
+}
+
+/* Console elements */
+.consoleBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 2px solid #E7CFCD;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    width: 400px;
+    height: 50px;
+}
+
+.boxChoiceColor {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #9F9AA4;
+    box-sizing: border-box;
+}
+
+/* Player choice */
+.pickColors {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid #E7CFCD;
+    background: #fff;
+    border-radius: 10px;
+    width: min-content;
+    margin: 40px;
+}
+
+/* Result buttons */
+.colorButton {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+}
+
+.cta {
+    border: 1px solid #E7CFCD;
+    background-color: #fff;
+    width: 100px;
+    height: 40px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#blueButton {
+    background: #5277B7;
+}
+
+#redButton {
+    background: #B5173C;
+}
+
+#greenButton {
+    background: #528E7C;
+}
+#yellowButton {
+    background: #FCEA4A;
+}
+#purpleButton {
+    background: #8A4FFF;
+}
+
+/* Result display */
+.result-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    align-items: center;
+}
+
+.results {
+    width: 150px;
+    height: 650px;
+    background: #9F9AA4;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}

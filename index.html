@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="css\styles.css">
+</head>
+<body>
+    <!-- HTML -->
+    
+    <div class="container">
+        <!-- Console -->
+        <div class="console-wrapper">
+            <div class="console">
+                <div class="consoleBoxes">
+                    <div class="boxChoiceColor"></div>
+                    <div class="boxChoiceColor"></div>
+                    <div class="boxChoiceColor"></div>
+                    <div class="boxChoiceColor"></div>
+                </div>
+            </div>
+    
+            <section class="playerChoice">
+                <div class="pickColors">
+                    <input type="button" class="colorButton" id="blueButton">
+                    <input type="button" class="colorButton" id="redButton">
+                    <input type="button" class="colorButton" id="greenButton">
+                    <input type="button" class="colorButton" id="yellowButton">
+                    <input type="button" class="colorButton" id="purpleButton">
+                </div>
+            </section>
+        </div>
+    
+        <!-- Results -->
+        <div class="result-wrapper">
+            <div class="results">
+                <!-- rajouter les lignes pour indiquer les points ? -->
+            </div>
+            <div class="validate">
+                <input type="button" value="Valider" class="cta" id="okButton">
+            </div>
+            <div id="resetBttnBox">
+                <input type="button" value="Effacer" class="cta">
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
