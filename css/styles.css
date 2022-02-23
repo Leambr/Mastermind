@@ -32,7 +32,7 @@ div .console {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 2px solid #E7CFCD;
+    border: 1px dashed #E7CFCD;
     border-left: none;
     border-bottom: none;
     border-right: none;

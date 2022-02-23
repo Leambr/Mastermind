@@ -58,7 +58,6 @@ function setBlueColor() {
         }
     }
     console.log(playerChoice) // pour afficher la liste
-    console.log(boxArray);
 }
 
 function setRedColor() {
@@ -71,7 +70,7 @@ function setRedColor() {
         }
     }
     console.log(playerChoice);
-    console.log(boxArray);
+
 }
 
 function setGreenColor() {
@@ -136,22 +135,15 @@ function resetColors() {
     console.log(playerChoice);
 }
 
-
-
-let newDiv = document.querySelector(".consoleBoxes")
-
 function validateColors() {
     if (playerChoice.length == 4) {
-        let newBox1 = newDiv.cloneNode(true);
-        newDiv.style.border = "none"
-        newDiv.after(newBox1);
-        console.log(newBox1);
-        resetChoice();
+        let mainDiv = document.querySelector(".consoleBoxes")
+        let newDiv = mainDiv.cloneNode(true);
+        mainDiv.after(newDiv);
+        console.log(newDiv);
+        compareResults(computerChoice, playerChoice)
+        resetColors()
     }
-}
-
-function resetChoice() {
-    playerChoice.length = 0;
 }
 
 // Appel de la fonction reset
@@ -159,6 +151,70 @@ resetBttn.onclick = resetColors;
 
 // Appel de la fonction valider
 validateBttn.onclick = validateColors;
+
+//Fonction pour comparer les couleurs du joueur et celles de l'ordinateur
+function compareResults(computer, player) {
+    let copyComputer = [...computer] // copier la variable de l'ordinateur pour ne pas modifier l'originale
+    let copyPlayer = [...player]
+    let i = 0
+    let guessAgain = 0
+    let goodGuess = 0
+
+    while (i < copyPlayer.length) {
+        if (copyComputer[i] == copyPlayer[i]) {
+            goodGuess += 1;
+            copyPlayer.splice(i, 1);
+            copyComputer.splice(i, 1);
+            console.log(copyComputer)
+            console.log(copyPlayer)
+        }
+        else {
+            i++
+        }
+    }
+
+    i = 0
+    while (i < copyPlayer.length) {
+        let positionColor = copyComputer.indexOf(copyPlayer[i]);
+        if (positionColor > -1) {
+            guessAgain += 1
+            copyPlayer.splice(i, 1);
+            copyComputer.splice(positionColor, 1); // Suppression de la couleur à l'emplacement trouvé
+        }
+        else {
+                i++
+            }
+        }
+
+    if (goodGuess == 4) {
+        console.log("Vous avez trouvé la bonne combinaison, bravo !")
+    }
+    else {
+        console.log("Vous avez", guessAgain, "couleur.s mal placée.s :")
+        console.log("Vous avez", goodGuess, "couleur.s bien placée.s.")
+    }
+    
+}
+
+// Je lance la fonction de comparaison des choix
+console.log(compareResults(computerChoice, playerChoice))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,6 +230,17 @@ validateBttn.onclick = validateColors;
 //             i++;
 //         }
 //     console.log(boxArray);
+//     }
+// }
+
+
+// function validateColors() {
+//     if (playerChoice.length == 4) {
+//         let newBox1 = newDiv.cloneNode(true);
+//         newDiv.style.border = "none"
+//         newDiv.after(newBox1);
+//         console.log(newBox1);
+//         resetChoice();
 //     }
 // }
 
