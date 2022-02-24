@@ -121,40 +121,12 @@ console.log(playerChoice)
 const resetBttn = document.querySelector("#resetBttnBox");
 const validateBttn = document.querySelector("#okButton")
 
-// Les fonctions pour les boutons valider et effacer
-function resetColors() {
-    if (playerChoice != 0) {
-        //efface tout, avant j'avais juste playerChoice.splice(-1) pour supprimer le dernier ajout
-        playerChoice.length = 0;
-        let i = 0;
-        while (i < boxArray.length) {
-            boxArray[i].style.background = "#1F1F1F";
-            i++;
-        }
-    }
-    console.log(playerChoice);
-}
-
-function validateColors() {
-    if (playerChoice.length == 4) {
-        let mainDiv = document.querySelector(".consoleBoxes")
-        let newDiv = mainDiv.cloneNode(true);
-        mainDiv.after(newDiv);
-        console.log(newDiv);
-        compareResults(computerChoice, playerChoice)
-        resetColors()
-    }
-}
-
-// Appel de la fonction reset
-resetBttn.onclick = resetColors;
-
-// Appel de la fonction valider
-validateBttn.onclick = validateColors;
+// Variable pour compter le nombre de tour
+let nbTurn = 10
 
 //Fonction pour comparer les couleurs du joueur et celles de l'ordinateur
 function compareResults(computer, player) {
-    let copyComputer = [...computer] // copier la variable de l'ordinateur pour ne pas modifier l'originale
+    let copyComputer = [...computer] 
     let copyPlayer = [...player]
     let i = 0
     let guessAgain = 0
@@ -179,25 +151,109 @@ function compareResults(computer, player) {
         if (positionColor > -1) {
             guessAgain += 1
             copyPlayer.splice(i, 1);
-            copyComputer.splice(positionColor, 1); // Suppression de la couleur à l'emplacement trouvé
+            copyComputer.splice(positionColor, 1);
         }
         else {
                 i++
             }
         }
 
-    if (goodGuess == 4) {
-        console.log("Vous avez trouvé la bonne combinaison, bravo !")
+    if (nbTurn > 0) {
+        let compteurSection = document.querySelector("#nb-turn")
+        let consoleResult = document.querySelector("#display-results")
+        let goodResult = document.createElement("p")
+        goodResult.style.color = "green"
+        let badResult = document.createElement("p")
+        badResult.style.color = "red"
+        if (goodGuess == 4) {
+            compteurSection.innerHTML = "Vous avez trouvé la bonne combinaison, bravo !";
+            consoleResult.appendChild(goodResult);
+            goodResult.innerHTML = goodGuess;
+            validateBttn.disabled = true;
+            console.log("Vous avez trouvé la bonne combinaison, bravo !")
+        }
+        else {
+            nbTurn -= 1
+            compteurSection.innerHTML = "Il vous reste : " + nbTurn + " essai(s)";
+
+            consoleResult.appendChild(goodResult);
+            goodResult.innerHTML = goodGuess;
+
+            consoleResult.appendChild(badResult).after(goodResult);
+            badResult.innerHTML = guessAgain;
+
+            console.log("Vous avez", guessAgain, "couleur.s mal placée.s :")
+            console.log("Vous avez", goodGuess, "couleur.s bien placée.s.")
+        }
+        
+        console.log(nbTurn)
+        if (nbTurn == 0) {
+            compteurSection.innerHTML = "Vous avez perdu";
+        }
     }
-    else {
-        console.log("Vous avez", guessAgain, "couleur.s mal placée.s :")
-        console.log("Vous avez", goodGuess, "couleur.s bien placée.s.")
-    }
-    
+
+        console.log("Tour", nbTurn)
 }
 
-// Je lance la fonction de comparaison des choix
-console.log(compareResults(computerChoice, playerChoice))
+
+// Fonction pour effacer le résultat
+function resetColors() {
+    if (playerChoice != 0) {
+        playerChoice.length = 0;
+        let i = 0;
+        while (i < boxArray.length) {
+            boxArray[i].style.background = "#1F1F1F";
+            i++;
+        }
+    }
+    console.log(playerChoice);
+}
+
+// Fonction pour valider le résultat
+function validateColors() {
+    if (playerChoice.length == 4) {
+        let mainDiv = document.querySelector(".consoleBoxes");
+        let newDiv = mainDiv.cloneNode(true);
+        mainDiv.after(newDiv);
+        console.log(newDiv);
+        compareResults(computerChoice, playerChoice);
+        resetColors();
+    }
+}
+
+
+
+
+// function stopGame() {
+//     if (nbTurn > 0) {
+//         let compteurSection = document.querySelector("#nb-turn")
+//         nbTurn -=1
+//         compteurSection.innerHTML = "Il vous reste : " + nbTurn + " essai(s)";
+//         console.log(nbTurn)
+//         if (nbTurn == 0) {
+//             compteurSection.innerHTML = "Vous avez perdu";
+//         }
+//     }
+//     console.log("Tour", nbTurn)
+//     return nbTurn
+// }
+
+function countTurn() {
+    validateColors();
+    stopGame();
+}
+
+
+// Appel de la fonction reset
+resetBttn.onclick = resetColors;
+
+// Appel de la fonction valider
+validateBttn.onclick = validateColors;
+
+// Créer un bouton pour recommencer une partie
+
+
+
 
 
 
@@ -245,4 +301,35 @@ console.log(compareResults(computerChoice, playerChoice))
 // }
 
 
+// function validateColors() {
+//     let nbTurn = 10
+//     if (nbTurn > 0) {
+//         if (playerChoice.length == 4) {
+            
+//             let mainDiv = document.querySelector(".consoleBoxes");
+//             let newDiv = mainDiv.cloneNode(true);
+//             mainDiv.after(newDiv);
+//             console.log(newDiv);
+//             compareResults(computerChoice, playerChoice);
+//             turn +=1
+//             resetColors();
+//             console.log(turn, "nbTurn")
+//         }
+
+//         if (turn == 11) {
+//             console.log("fin de la partie");
+//             validateBttn.disabled = true; //empêcher de pouvoir cliquer sur valider de nouveau
+//         }
+// }
+
+
+// function stopGame() {
+//     let nbTurn = 0
+//     if (validateColors) {
+//         nbTurn +=1
+//     }
+//     return nbTurn
+// }
+
+// let turn = stopGame();
 

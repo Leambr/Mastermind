@@ -22,7 +22,7 @@ div .console {
     flex-direction: column;
     justify-content: flex-end;
     width: 400px;
-    height: 700px;
+    height: 600px;
     background: #1F1F1F;
     border-radius: 30px;
 }
@@ -111,10 +111,23 @@ div .console {
     align-items: center;
 }
 
-.results {
+.results > * {
     width: 150px;
-    height: 650px;
+    height: 600px;
     background: #9F9AA4;
     border-radius: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.display-results p {
+    display: flex;
+    flex-direction: column;;
+}
+
+.display-results p {
+    font-size: 16px;
 }
