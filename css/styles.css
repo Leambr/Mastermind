@@ -1,6 +1,8 @@
 body {
     background: #E0E0E0;
     margin-top: 50px;
+    font-family: 'Raleway';
+    font-size: 16px;
 }
 
 /* Page display */
@@ -59,7 +61,7 @@ div .console {
     background: #fff;
     border-radius: 10px;
     width: min-content;
-    margin: 40px;
+    margin-top: 40px;
 }
 
 /* Result buttons */
@@ -74,7 +76,7 @@ div .console {
 .cta {
     border: 1px solid #E7CFCD;
     background-color: #fff;
-    width: 100px;
+    padding: 10px 30px;
     height: 40px;
     font-family: 'Raleway';
     font-weight: 600;
@@ -83,6 +85,11 @@ div .console {
     box-sizing: border-box;
     cursor: pointer;
     margin: 5px;
+}
+
+input#resetBttn {
+    background-color: #1F1F1F;
+    color: #E7CFCD;;
 }
 
 #blueButton {
@@ -111,23 +118,41 @@ div .console {
     align-items: center;
 }
 
-.results > * {
-    width: 150px;
+.results  {
+    width: 120px;
     height: 600px;
     background: #9F9AA4;
     border-radius: 30px;
     margin-bottom: 35px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-end;
+    flex-direction: column-reverse;
+    text-align: center;
 }
 
-.display-results p {
-    display: flex;
-    flex-direction: column;;
+div.divResults {
+    border: 1px dashed #E7CFCD;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    margin: 0;
+    padding: 0;
 }
 
-.display-results p {
-    font-size: 16px;
+/* #display-results > * {
+    text-align: center;
+    border: 1px dashed #E7CFCD;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    width: 150px;
+    height: 30px;
+} */
+
+p.resultats span {
+    color: red;
+    padding-left: 15px;
+}
+
+p.resultats {
+    margin: 11px;
 }
