@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;700;800&family=Raleway:wght@400;500;700&display=swap');
 
 body {
     background: #E0E0E0;
     margin: 20px 20px;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
 }
 
@@ -162,7 +163,7 @@ p.resultats {
     div .console {
         width: 300px;
         height: 600px;
-        margin-left: 15px;
+        margin-left: 10px;
     }
 
     .results  {
@@ -198,5 +199,6 @@ p.resultats {
         background-color: #fff;
         padding: 10px 15px;
         height: 40px;
+    }
 
 }
