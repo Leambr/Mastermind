@@ -196,10 +196,10 @@ function compareResults(computer, player) {
         if (goodGuess == 4) {
 
             // On affiche la phrase gagnante à la place du nombre d'essais restants
-            compteurSection.innerHTML = "Vous avez trouvé la bonne combinaison, bravo !";
+            compteurSection.innerHTML = "Vous avez trouvé la bonne combinaison !";
 
             // Dans la partie résultats, on affiche les couleurs bien ou mal placées
-            results.innerHTML = goodGuess + "<span> " + guessAgain + " </span>";
+            results.innerHTML = "Bravo !";
 
             // On déconnecte le bouton valider afin qu'il ne soit plus cliquable
             validateBttn.disabled = true;

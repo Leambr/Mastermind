@@ -1,6 +1,7 @@
+
 body {
     background: #E0E0E0;
-    margin-top: 50px;
+    margin: 20px 20px;
     font-family: 'Raleway';
     font-size: 16px;
 }
@@ -61,7 +62,7 @@ div .console {
     background: #fff;
     border-radius: 10px;
     width: min-content;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 /* Result buttons */
@@ -123,7 +124,7 @@ input#resetBttn {
     height: 600px;
     background: #9F9AA4;
     border-radius: 30px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
@@ -145,4 +146,47 @@ p.resultats span {
 
 p.resultats {
     margin: 11px;
+}
+
+/* Small screens */
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 20px 20px;
+        font-size: 14px;
+    }
+    .result-wrapper {
+        padding-left: 5px;
+    }
+
+    div .console {
+        width: 300px;
+        height: 600px;
+    }
+
+    .results  {
+        width: 70px;
+        height: 600px;
+    }
+
+    .consoleBoxes, div.consoleBoxesComputer{
+        width: 300px;
+        height: 50px;
+    }
+    
+    .boxChoiceColor, div.boxChoiceColorComputer {
+        height: 20px;
+        width: 20px;
+    }
+
+    .colorButton {
+        height: 20px;
+        width: 20px;
+    }
+
+    p.resultats span {
+        padding-left: 5px;
+    }
+    
+
 }
