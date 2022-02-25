@@ -162,6 +162,7 @@ p.resultats {
     div .console {
         width: 300px;
         height: 600px;
+        margin-left: 15px;
     }
 
     .results  {
@@ -187,6 +188,15 @@ p.resultats {
     p.resultats span {
         padding-left: 5px;
     }
+
+    p.resultats {
+        font-size: 14px;
+    }
     
+    .cta {
+        border: 1px solid #E7CFCD;
+        background-color: #fff;
+        padding: 10px 15px;
+        height: 40px;
 
 }
