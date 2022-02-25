@@ -30,7 +30,7 @@ div .console {
 }
 
 /* Console elements */
-.consoleBoxes {
+.consoleBoxes, div.consoleBoxesComputer{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -42,7 +42,7 @@ div .console {
     height: 50px;
 }
 
-.boxChoiceColor {
+.boxChoiceColor, div.boxChoiceColorComputer {
     margin: 10px;
     height: 30px;
     width: 30px;
@@ -137,16 +137,6 @@ div.divResults {
     margin: 0;
     padding: 0;
 }
-
-/* #display-results > * {
-    text-align: center;
-    border: 1px dashed #E7CFCD;
-    border-left: none;
-    border-bottom: none;
-    border-right: none;
-    width: 150px;
-    height: 30px;
-} */
 
 p.resultats span {
     color: red;
