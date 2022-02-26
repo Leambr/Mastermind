@@ -127,7 +127,7 @@ const validateBttn = document.querySelector("#okButton");
 const resetBttn = document.querySelector("#resetBttn")
 
 // Variable pour compter le nombre de tour d'une partie
-let nbTurn = 10
+let nbTurn = 2
 
 //Fonction pour comparer les couleurs du joueur et celles de l'ordinateur
 function compareResults(computer, player) {
@@ -199,7 +199,7 @@ function compareResults(computer, player) {
             compteurSection.innerHTML = "Vous avez trouvé la bonne combinaison !";
 
             // Dans la partie résultats, on affiche les couleurs bien ou mal placées
-            results.innerHTML = "Bravo !";
+            results.innerHTML = goodGuess + "<span> " + guessAgain + " </span>";
 
             // On déconnecte le bouton valider afin qu'il ne soit plus cliquable
             validateBttn.disabled = true;
@@ -228,12 +228,12 @@ function compareResults(computer, player) {
         if (nbTurn == 0) {
 
             // On affiche la phrase qui indique qu'il a perdu
-            compteurSection.innerHTML = "Vous avez perdu"
+            compteurSection.innerHTML = "Vous avez perdu."
 
             // Dans la partie résultats, on indique la ligne de la solution qu'il fallait trouver
             results.innerHTML = "Solution"
-            results.style.paddingBottom = "55px"
-            results.style.fontSize = "20px"
+            results.style.paddingBottom = "4.5em"
+            results.style.fontSize = "0.875em"
             results.style.color = "black"
             results.style.fontWeight = "bold"
 

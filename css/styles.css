@@ -4,7 +4,7 @@ body {
     background: #E0E0E0;
     margin: 20px 20px;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* Page display */
@@ -25,7 +25,7 @@ div .console {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 400px;
+    width: 100%;
     height: 600px;
     background: #1F1F1F;
     border-radius: 30px;
@@ -153,17 +153,17 @@ p.resultats {
 
 @media only screen and (max-width: 768px) {
     body {
-        margin: 20px 20px;
-        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .result-wrapper {
         padding-left: 5px;
     }
 
     div .console {
-        width: 300px;
-        height: 600px;
-        margin-left: 10px;
+        width: 100%;
+        height: 120%;
+        margin-left: 4%;
     }
 
     .results  {
@@ -202,3 +202,14 @@ p.resultats {
     }
 
 }
+
+/* UW screens */
+@media screen and (min-width: 1600px) {
+    body {
+        /* Taille fixe */
+        width: 1600px;
+        /* Centrer */
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
