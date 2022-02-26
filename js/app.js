@@ -127,7 +127,7 @@ const validateBttn = document.querySelector("#okButton");
 const resetBttn = document.querySelector("#resetBttn")
 
 // Variable pour compter le nombre de tour d'une partie
-let nbTurn = 2
+let nbTurn = 10
 
 //Fonction pour comparer les couleurs du joueur et celles de l'ordinateur
 function compareResults(computer, player) {
