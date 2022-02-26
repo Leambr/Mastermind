@@ -1,7 +1,7 @@
 <h1 align="center">Mastermind</h1>
 
 <div align="center">
-   First JavaScript project. Elaborated by myself during my frontend class.
+   First JavaScript project. Elaborated individually during my frontend class.
 </div>
 
 <div align="center">
@@ -26,7 +26,7 @@
 
 ## Project Overview
 
-![Mastermind_screen]()
+![image](https://user-images.githubusercontent.com/95865130/155853013-f16372e3-2488-441a-95b8-92a722b901d8.png)
 
 In order to practice JavaScript, we had to individually create a Mastermind. There were some mandatory features which needed to be developped and some bonus features.
 
