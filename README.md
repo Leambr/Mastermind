@@ -26,7 +26,11 @@
 
 ## Project Overview
 
-![image](https://user-images.githubusercontent.com/95865130/155853013-f16372e3-2488-441a-95b8-92a722b901d8.png)
+![image](https://user-images.githubusercontent.com/95865130/156772107-656c8ad9-a618-4fce-93a1-e5c14355fc33.png)
+<br><strong>Dark mode</strong><br>
+
+![image](https://user-images.githubusercontent.com/95865130/156772525-2bb9d01d-247b-43fa-9bb9-0d9ec32b42fb.png)
+<br><strong>Light mode</strong>
 
 In order to practice JavaScript, we had to individually create a Mastermind. There were some mandatory features which needed to be developped and some bonus features.
 
