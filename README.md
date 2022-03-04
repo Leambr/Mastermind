@@ -45,6 +45,7 @@ In order to practice JavaScript, we had to individually create a Mastermind. The
 - Add a button to launch a new game
 - Create a game board
 - Make the page responsive to play on smartphones
+- Darkmode/Lightmode toggle
 
 ### Built With
 

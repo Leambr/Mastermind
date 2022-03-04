@@ -1,10 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;700;800&family=Raleway:wght@400;500;700&display=swap');
 
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Darkmode/Lightmode Switch toggle */
+#toggle {
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 70px;
+    height: 30px;
+    border-radius: 30px;
+    background: #1F1F1F;
+    transition: 0.5s;
+    box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
+                inset 0 8px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* Lightmode active */
+#toggle.active {
     background: #E0E0E0;
+    box-shadow: inset 0 2px 60px rgba(0,0,0,0.1),
+                inset 0 2px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.05);
+}
+
+/* Darkmode active */
+#toggle .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: no-repeat center/50% url(../icones/darkmode.png);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255,255,255,0.2),
+                inset 0 -4px 4px rgba(255,255,255,0.2);
+    transition: 0.5s;
+
+}
+/* Lightmode active */
+#toggle.active .indicator {
+    left: 40px;
+    background: no-repeat center/50% #eaeaea url(../icones/lightmode.png);
+    /* linear-gradient(to bottom, #eaeaea, #E0E0E0); */
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255,255,255,1),
+                inset 0 -4px 4px rgba(255,255,255,1);
+}
+
+body {
+    background: #383838;
     margin: 20px 20px;
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
+    transition: 0.5s;
+    min-height: 100vh;
+}
+
+/* Lightmode active */
+body.active {
+    background: #E0E0E0;
 }
 
 /* Page display */
@@ -21,7 +85,7 @@ body {
     align-items: center;
 }
 
-div .console {
+.console {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -29,22 +93,38 @@ div .console {
     height: 600px;
     background: #1F1F1F;
     border-radius: 30px;
+    transition: 0.5s;
+}
+
+
+/* Lightmode active */
+.console.active {
+    background: #FFEEEC;
 }
 
 /* Console elements */
-.consoleBoxes, div.consoleBoxesComputer{
+.consoleBoxes {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 1px dashed #E7CFCD;
+    border: 1px dashed #9F9AA4;
     border-left: none;
     border-bottom: none;
     border-right: none;
     width: 400px;
     height: 50px;
+    transition: 0.5s;
 }
 
-.boxChoiceColor, div.boxChoiceColorComputer {
+/* Lightmode active */
+.consoleBoxes.active {
+    border: 1px dashed #E7CFCD;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.boxChoiceColor {
     margin: 10px;
     height: 30px;
     width: 30px;
@@ -59,11 +139,18 @@ div .console {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    border: 1px solid #E7CFCD;
-    background: #fff;
+    background: #1F1F1F;
     border-radius: 10px;
     width: min-content;
     margin-top: 20px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+/* Lightmode active */
+.pickColors.active {
+    border: 1px solid #E7CFCD;
+    background: #FFF6F5;
 }
 
 /* Result buttons */
@@ -77,7 +164,7 @@ div .console {
 
 .cta {
     border: 1px solid #E7CFCD;
-    background-color: #fff;
+    background-color: #C7BBD1;
     padding: 10px 30px;
     height: 40px;
     font-family: 'Raleway';
@@ -89,9 +176,43 @@ div .console {
     margin: 5px;
 }
 
-input#resetBttn {
-    background-color: #1F1F1F;
-    color: #E7CFCD;;
+#okButton {
+    background-color: #AF91C9;
+    border: none;
+    transition: 0.5s;
+}
+
+/* Lightmode active */
+.validate.active #okButton {
+    border: 1px solid #E7CFCD;
+    background-color: #D7B0AC;
+}
+
+
+#clearBttn {
+    background-color: #D6C3E7;
+    border: none;
+    transition: 0.5s;
+}
+
+/* Lightmode active */
+#clearBttnBox.active #clearBttn {
+    border: 1px solid #E7CFCD;
+    background-color: #FFF6F5;
+}
+
+#resetBttn {
+    margin-top: 10px;
+    background-color: #E3D5F0;
+    color: #1F1F1F;
+    transition: 0.5s;
+}
+
+/* Lightmode active */
+#resetBttn.active {
+    border: 1px solid #E7CFCD;
+    background-color: #FFF6F5;
+    color: #1F1F1F;
 }
 
 #blueButton {
@@ -123,7 +244,7 @@ input#resetBttn {
 .results  {
     width: 120px;
     height: 600px;
-    background: #9F9AA4;
+    background: #1F1F1F;
     border-radius: 30px;
     margin-bottom: 15px;
     display: flex;
@@ -131,8 +252,13 @@ input#resetBttn {
     text-align: center;
 }
 
-div.divResults {
-    border: 1px dashed #E7CFCD;
+/* Lightmode active */
+.results.active {
+    background: #B3ADB8;
+}
+
+.divResults {
+    border: 1px dashed #9F9AA4;
     border-left: none;
     border-bottom: none;
     border-right: none;
@@ -146,11 +272,19 @@ p.resultats span {
 }
 
 p.resultats {
-    margin: 11px;
+    margin: 10px;
+}
+
+p#nb-turn {
+    color: #eaeaea;
+}
+
+/* Lightmode active */
+p#nb-turn.active {
+    color: #1F1F1F;
 }
 
 /* Small screens */
-
 @media only screen and (max-width: 768px) {
     body {
         margin-left: auto;
@@ -213,3 +347,5 @@ p.resultats {
         margin-right: auto;
     }
   }
+
+
